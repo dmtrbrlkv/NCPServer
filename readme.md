@@ -1,5 +1,5 @@
 ## NCPServer
-NCPServer - это простой сервер на базе Flask и библиотеки NotesComPy, позволяюший отдавать данные из баз notes в JSON формате. Запрос данных происходит в REST API стиле. Конфигурация доступных баз и данных хранится в файле config.json
+NCPServer - это простой сервер на базе Flask и библиотеки NotesComPy, позволяющий отдавать данные из баз notes в JSON формате. Запрос данных происходит в REST API стиле. Конфигурация доступных баз и данных хранится в файле config.json
 
 #### Установка
 pip install ncpserver-0.1.tar.gz
@@ -42,9 +42,9 @@ nspserver -c path\to\config.json
 * password - пароль от user.id, от имени которго будет работать сервер
 * url - путь, по которому будет доступен сервер
 * port - порт, по которому будет доступен сервер
-* separator - разделитель для разделение полей, свойств и формул в заголовках запросов
+* separator - разделитель для полей, свойств и формул в заголовках запросов
 * log, log_format , log_date - лог-файл и формат сообщений
-* debug - запуск Flask в режиме отладки
+* debug - запуск в режиме отладки
 * databases - доступные для сервера базы
 
 ##### Конфигурация доступных баз
@@ -64,19 +64,6 @@ nspserver -c path\to\config.json
 Рассмотрим сервер с конфигурацией баз:
 ```
     "databases": {
-        "names":{
-            "filepath": "names.nsf",
-            "server": "PyLN",
-            "methods": {
-                "view": {"People": "People"},
-                "search": false,
-                "document": false
-            },
-            "doc_info": {
-                "fields": false
-            }
-        },
-
         "itcrowd":{
             "filepath": "itcrowd.nsf",
             "server": "PyLN",
