@@ -2,11 +2,12 @@
     "global_session": true,
     "password": "python",
     "url": "/notes",
+    "port": 5000,
     "separator": "##",
     "log": null,
     "log_format": "[%(asctime)s] %(levelname).1s %(message)s",
     "log_date": "%Y.%m.%d %H:%M:%S",
-    "debug": true,
+    "debug": false,
     "databases": {
         "names":{
             "filepath": "names.nsf",

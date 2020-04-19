@@ -147,4 +147,4 @@ def db_info(dbname):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=config["port"])

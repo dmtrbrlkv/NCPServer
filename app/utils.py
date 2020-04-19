@@ -68,6 +68,12 @@ def init():
     databases = config["databases"]
     separator = config["separator"]
     app = Flask(__name__)
+    if "debug" in config and config["debug"]:
+        app.debug = True
+
+    if "port" not in config:
+        config["port"] = 8080
+
     logging.basicConfig(filename=config["log"], level=logging.INFO if not config["debug"] else logging.DEBUG,
                         format=config["log_format"], datefmt=config["log_date"])
 
