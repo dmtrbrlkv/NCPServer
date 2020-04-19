@@ -94,7 +94,8 @@ nspserver -c path\to\config.json
     }
 ```
 
-* Информация о доступных базах и методах - GET запрос на url http://host:port/<базовый url>
+##### Информация о доступных базах и методах
+GET запрос на url `http://host:port/<базовый url>`
 
 `GET 'http://127.0.0.1:5000/notes/'`
 ```
@@ -129,7 +130,8 @@ nspserver -c path\to\config.json
 }
 ```
 
-* Информация о базе - GET запрос на url базы
+##### Информация о базе
+GET запрос на url `http://host:port/<базовый url>/<имя базы>`
 
 `GET 'http://127.0.0.1:5000/notes/itcrowd'`
 ```
@@ -139,12 +141,13 @@ nspserver -c path\to\config.json
 }
 ```
 
-* Информация о документе - GET запрос на url http://host:port/<базовый url>/<имя базы>/document/<universalid>
+##### Информация о документе 
+GET запрос на url `http://host:port/<базовый url>/<имя базы>/document/<universalid>`
     
-    Заголовки:
-    * `fields: Form##UNID` - поля
-    * `properties: Universalid` - свойства
-    * `formulas: @Created##@DbTitle` - формулы
+Заголовки:
+* `fields` - поля
+* `properties` - свойства
+* `formulas` - формулы
 
 
 `GET 'http://127.0.0.1:5000/notes/itcrowd/document/9A899214038E229843258541003BFFDB' --header 'fields: Form##UNID' --header 'properties: Universalid' --header 'formulas: @Created##@DbTitle'`
@@ -166,13 +169,14 @@ nspserver -c path\to\config.json
 }
 ```
 
-* Поиск по формуле - GET запрос на url http://host:port/<базовый url>/<имя базы>/search
+##### Поиск по формуле
+GET запрос на url `http://host:port/<базовый url>/<имя базы>/search`
 
-     Заголовки:
-    * `search_formula: ` - формула поиска
-    * `fields: ` - поля
-    * `properties: ` - свойства
-    * `formulas: ` - формулы
+Заголовки:
+* `search_formula` - формула поиска
+* `fields` - поля
+* `properties` - свойства
+* `formulas` - формулы
     
 `GET 'http://127.0.0.1:5000/notes/itcrowd/search' --header 'search_formula: @contains(FullName; "John")' --header 'fields: FullName##Languages##Level'`
 
@@ -203,15 +207,16 @@ nspserver -c path\to\config.json
 }
 ```
 
-* Отбор по представлению - GET запрос на url http://host:port/<базовый url>/<имя базы>/view/<имя представления>
+##### Отбор по представлению 
+GET запрос на url `http://host:port/<базовый url>/<имя базы>/view/<имя представления>`
 
-     Заголовки:
-    * `keys: ` - ключи отбора
-    * `fields: ` - поля
-    * `properties: ` - свойства
-    * `formulas: ` - формулы
+Заголовки:
+* `keys: ` - ключи отбора
+* `fields: ` - поля
+* `properties: ` - свойства
+* `formulas: ` - формулы
     
-    Если поля, свойства и формулы не переданы, то данные возвращаются так, как они отображаются в представлении
+Если поля, свойства и формулы не переданы, то данные возвращаются так, как они отображаются в представлении
     
 `GET 'http://127.0.0.1:5000/notes/itcrowd/view/Levels' --header 'keys: Junior'`
 
