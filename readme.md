@@ -64,6 +64,18 @@ nspserver -c path\to\config.json
 Рассмотрим сервер с конфигурацией баз:
 ```
     "databases": {
+        "names":{
+            "filepath": "names.nsf",
+            "server": "PyLN",
+            "methods": {
+                "view": {"People": "People"},
+                "search": false,
+                "document": false
+            },
+            "doc_info": {
+                "fields": false
+            }
+        },
         "itcrowd":{
             "filepath": "itcrowd.nsf",
             "server": "PyLN",
